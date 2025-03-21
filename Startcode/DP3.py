@@ -15,7 +15,7 @@ db = Database(host="localhost", gebruiker="user", wachtwoord="password", databas
 # Haal de eigenschappen op van een personeelslid .
 # navigeer naar het JSON-bestand, let op: er zijn ook andere personeelsleden om te testen!
 # en maak vooral ook je eigen persoonlijke voorkeuren :-)
-bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_3.json' #'personeelsgegevens_personeelslid_1.json' 
+bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_2.json' #'personeelsgegevens_personeelslid_1.json' 
 
 # open het JSON-bestand 
 json_bestand = open(bestand_pad)
@@ -67,6 +67,43 @@ bevoegdheid = {
 dagtaken = []
 restant_werktijd = eigenschappen_personeelslid["werktijd"]
 
+def filter_en_sorteren_taken(onderhoudstaken, medewerker):
+    # Filtert en sorteert onderhoudstaken op basis van specialisatie en prioriteit.
+    
+    # - Specialistische taken met 'hoog' prioriteit eerst
+    # - Andere taken met 'hoog' prioriteit daarna
+    # - Specialistische taken met 'laag' prioriteit
+    # - Andere taken met 'laag' prioriteit
+
+    specialistische_taken_hoog = []
+    andere_taken_hoog = []
+    specialistische_taken_laag = []
+    andere_taken_laag = []
+
+    # Sorteer op basis van string-prioriteit
+    if onderhoudstaak["prioriteit"] == "hoog":  
+        if onderhoudstaak["attractie"] == eigenschappen_personeelslid["specialist_in_attracties"]:
+            specialistische_taken_hoog.append(taak)
+        else:
+            andere_taken_hoog.append(taak)
+    else:  # Als het niet 'hoog' is, gaan we ervan uit dat het 'laag' is
+        if onderhoudstaak["attractie"] == eigenschappen_personeelslid["specialist_in_attracties"]:
+            specialistische_taken_laag.append(taak)
+        else:
+            andere_taken_laag.append(taak)
+
+    for onderhoudstaak in specialistische_taken_hoog:
+        # duur onderhoudstaak gelijk of lager dan restant werktijd personeelslid?
+        if onderhoudstaak["duur"] > restant_werktijd:
+            continue
+            
+        # beroepstype gelijk aan persoon beroeptype?
+        if onderhoudstaak["beroepstype"] != eigenschappen_personeelslid["beroepstype"]:
+            continue
+        # Bevoegdheid personeelslid gelijk aan of hoger bevoegdheid onderhoudstaak?
+        if bevoegdheid[eigenschappen_personeelslid["bevoegdheid"]] < bevoegdheid[onderhoudstaak["bevoegdheid"]]:
+            continue
+
 
 for onderhoudstaak in onderhoudstaken:
     # duur onderhoudstaak gelijk of lager dan restant werktijd personeelslid?
@@ -81,8 +118,9 @@ for onderhoudstaak in onderhoudstaken:
         continue
 
     # specialist check
-    #if onderhoudstaak["attractie"] in eigenschappen_personeelslid["specialist_in_attracties"]:
-
+    # if onderhoudstaak["attractie"] not in eigenschappen_personeelslid["specialist_in_attracties"]:
+    #    continue
+    
         
     # weersomstandigheden regen en onderhoudstaak buiten?
     
@@ -91,7 +129,7 @@ for onderhoudstaak in onderhoudstaken:
     restant_werktijd -= onderhoudstaak["duur"]
 
 #for dagtaak in dagtaken:
-   # print(f"{dagtaak['attractie']}: {dagtaak['omschrijving']} bevoegdheid: {dagtaak['bevoegdheid']} {dagtaak['beroepstype']} prioriteit: {dagtaak['prioriteit']} duur: {dagtaak['duur']} minuten")
+ #   print(f"{dagtaak['attractie']}: {dagtaak['omschrijving']} bevoegdheid: {dagtaak['bevoegdheid']} {dagtaak['beroepstype']} prioriteit: {dagtaak['prioriteit']} duur: {dagtaak['duur']} minuten")
 
 # Voeg taken toe aan de dagtakenlijst en bereken de totale duur
 totale_duur = 0
@@ -137,7 +175,7 @@ persoonlijk_taken = {
 }
 
 # Schrijf het resultaat naar een JSON-bestand
-output_bestand_pad = Path(__file__).parent / 'aaaa.json'
+output_bestand_pad = Path(__file__).parent / 'bbbb.json'
 
 with open(output_bestand_pad, 'w', encoding='utf-8') as json_bestand_uitvoer:
     json.dump(persoonlijk_taken, json_bestand_uitvoer, indent=4, ensure_ascii=False)
