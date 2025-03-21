@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module tkinter_wrapper</title>
+
+<style>
+    dt {
+        border-top: 2px solid black;
+    }
+</style>
+</head><body>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="tkinter_wrapper.html#Scherm">Scherm</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Scherm">class <strong>Scherm</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Scherm">Scherm</a>(titel,&nbsp;breedte,&nbsp;hoogte)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Scherm-__init__"><strong>__init__</strong></a>(self, titel, breedte, hoogte)</dt><dd><span class="code">Initialiseren&nbsp;van&nbsp;het&nbsp;hoofdvenster&nbsp;van&nbsp;de&nbsp;GUI.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;titel&nbsp;(str):&nbsp;De&nbsp;titel&nbsp;van&nbsp;het&nbsp;venster.<br>
+-&nbsp;breedte&nbsp;(int):&nbsp;De&nbsp;breedte&nbsp;van&nbsp;het&nbsp;venster&nbsp;in&nbsp;pixels.<br>
+-&nbsp;hoogte&nbsp;(int):&nbsp;De&nbsp;hoogte&nbsp;van&nbsp;het&nbsp;venster&nbsp;in&nbsp;pixels.</span></dd></dl>
+
+<dl><dt><a name="Scherm-attractie_opslaan"><strong>attractie_opslaan</strong></a>(self, window, voorziening_attributen, variabelen, callback)</dt><dd><span class="code">Slaat&nbsp;de&nbsp;ingevoerde&nbsp;waarden&nbsp;op&nbsp;en&nbsp;roept&nbsp;de&nbsp;callback-functie&nbsp;aan.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;window&nbsp;(tk.Toplevel):&nbsp;Het&nbsp;dialoogvenster&nbsp;dat&nbsp;moet&nbsp;worden&nbsp;gesloten&nbsp;na&nbsp;het&nbsp;opslaan.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;voorziening_attributen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;attributen&nbsp;van&nbsp;de&nbsp;voorziening.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;variabelen&nbsp;(dict):&nbsp;De&nbsp;ingevoerde&nbsp;waarden<br>
+&nbsp;&nbsp;&nbsp;&nbsp;callback&nbsp;(function):&nbsp;Callback-functie&nbsp;die&nbsp;wordt&nbsp;aangeroepen&nbsp;met&nbsp;de&nbsp;ingevoerde&nbsp;waarden.</span></dd></dl>
+
+<dl><dt><a name="Scherm-herlaad_tabel"><strong>herlaad_tabel</strong></a>(self, tabel, rijen)</dt><dd><span class="code">Herlaadt&nbsp;de&nbsp;tabel&nbsp;met&nbsp;nieuwe&nbsp;rijen.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tabel&nbsp;(ttk.Frame):&nbsp;De&nbsp;tabel&nbsp;die&nbsp;herladen&nbsp;wordt.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rijen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;nieuwe&nbsp;rijen&nbsp;met&nbsp;gegevens.</span></dd></dl>
+
+<dl><dt><a name="Scherm-open"><strong>open</strong></a>(self)</dt><dd><span class="code">Open&nbsp;de&nbsp;GUI</span></dd></dl>
+
+<dl><dt><a name="Scherm-open_bewerk_toevoeg_scherm"><strong>open_bewerk_toevoeg_scherm</strong></a>(self, voorziening_attributen, titel, toevoeg_callback, bewerk_callback, rij=None)</dt><dd><span class="code">Opent&nbsp;een&nbsp;dialoogvenster&nbsp;voor&nbsp;het&nbsp;toevoegen&nbsp;of&nbsp;bewerken&nbsp;van&nbsp;een&nbsp;voorziening.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;voorziening_attributen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;attributen&nbsp;van&nbsp;de&nbsp;voorziening.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titel&nbsp;(str):&nbsp;Titel&nbsp;van&nbsp;het&nbsp;dialoogvenster.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;toevoeg_callback&nbsp;(function):&nbsp;Callback-functie&nbsp;voor&nbsp;het&nbsp;toevoegen&nbsp;van&nbsp;een&nbsp;voorziening.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bewerk_callback&nbsp;(function):&nbsp;Callback-functie&nbsp;voor&nbsp;het&nbsp;bewerken&nbsp;van&nbsp;een&nbsp;voorziening.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rij&nbsp;(list,&nbsp;optional):&nbsp;Bestaande&nbsp;waarden&nbsp;van&nbsp;de&nbsp;voorziening&nbsp;(voor&nbsp;bewerken).</span></dd></dl>
+
+<dl><dt><a name="Scherm-toon_fout_bericht"><strong>toon_fout_bericht</strong></a>(self, titel, bericht)</dt><dd><span class="code">Toont&nbsp;een&nbsp;foutmelding&nbsp;dialoogvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titel&nbsp;(str):&nbsp;De&nbsp;titel&nbsp;van&nbsp;het&nbsp;dialoogvenster.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bericht&nbsp;(str):&nbsp;Het&nbsp;bericht&nbsp;in&nbsp;het&nbsp;dialoogvenster.</span></dd></dl>
+
+<dl><dt><a name="Scherm-toon_informatie_bericht"><strong>toon_informatie_bericht</strong></a>(self, titel, bericht)</dt><dd><span class="code">Toont&nbsp;een&nbsp;informatie&nbsp;dialoogvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titel&nbsp;(str):&nbsp;De&nbsp;titel&nbsp;van&nbsp;het&nbsp;dialoogvenster.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bericht&nbsp;(str):&nbsp;Het&nbsp;bericht&nbsp;in&nbsp;het&nbsp;dialoogvenster.</span></dd></dl>
+
+<dl><dt><a name="Scherm-toon_vraag_ja_nee_venster"><strong>toon_vraag_ja_nee_venster</strong></a>(self, titel, bericht)</dt><dd><span class="code">Toont&nbsp;een&nbsp;dialoogvenster&nbsp;met&nbsp;een&nbsp;Ja/Nee&nbsp;vraag.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titel&nbsp;(str):&nbsp;De&nbsp;titel&nbsp;van&nbsp;het&nbsp;dialoogvenster.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bericht&nbsp;(str):&nbsp;Het&nbsp;bericht&nbsp;in&nbsp;het&nbsp;dialoogvenster.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;als&nbsp;de&nbsp;gebruiker&nbsp;'Ja'&nbsp;heeft&nbsp;gekozen,&nbsp;anders&nbsp;False.</span></dd></dl>
+
+<dl><dt><a name="Scherm-verwijder_rij"><strong>verwijder_rij</strong></a>(self, tabel, kolom_namen, rij_index, verwijder_callback)</dt><dd><span class="code">Verwijdert&nbsp;een&nbsp;rij&nbsp;uit&nbsp;de&nbsp;tabel&nbsp;en&nbsp;roept&nbsp;de&nbsp;verwijder_callback&nbsp;aan&nbsp;met&nbsp;de&nbsp;verwijderde&nbsp;voorziening.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tabel&nbsp;(ttk.Frame):&nbsp;De&nbsp;tabel&nbsp;waaruit&nbsp;de&nbsp;rij&nbsp;verwijderd&nbsp;wordt.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;kolom_namen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;kolomnamen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rij_index&nbsp;(int):&nbsp;De&nbsp;index&nbsp;van&nbsp;de&nbsp;rij&nbsp;die&nbsp;verwijderd&nbsp;moet&nbsp;worden.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;verwijder_callback&nbsp;(function):&nbsp;Callback-functie&nbsp;die&nbsp;wordt&nbsp;aangeroepen&nbsp;met&nbsp;de&nbsp;verwijderde&nbsp;verzoening&nbsp;en&nbsp;de&nbsp;rij-index.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_filters_toe"><strong>voeg_filters_toe</strong></a>(self, filter_options, start_x, start_y, maximale_breedte, callback)</dt><dd><span class="code">Voegt&nbsp;filteropties&nbsp;toe&nbsp;aan&nbsp;het&nbsp;hoofdvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filter_options&nbsp;(dict):&nbsp;Een&nbsp;dictionary&nbsp;met&nbsp;filternamen&nbsp;en&nbsp;opties.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;start_x&nbsp;(int):&nbsp;De&nbsp;start&nbsp;x-coördinaat&nbsp;voor&nbsp;de&nbsp;filters.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;start_y&nbsp;(int):&nbsp;De&nbsp;start&nbsp;y-coördinaat&nbsp;voor&nbsp;de&nbsp;filters.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;maximale_breedte&nbsp;(int):&nbsp;De&nbsp;maximale&nbsp;breedte&nbsp;beschikbaar&nbsp;voor&nbsp;de&nbsp;filters.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;callback&nbsp;(function):&nbsp;Callback-functie&nbsp;die&nbsp;wordt&nbsp;aangeroepen&nbsp;met&nbsp;de&nbsp;geselecteerde&nbsp;filterwaarden.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_invoerveld_toe"><strong>voeg_invoerveld_toe</strong></a>(self, x, y)</dt><dd><span class="code">Voegt&nbsp;een&nbsp;invoerveld&nbsp;toe&nbsp;aan&nbsp;het&nbsp;hoofdvenster&nbsp;en&nbsp;geeft&nbsp;ingevulde&nbsp;waarde&nbsp;in&nbsp;het&nbsp;veld&nbsp;terug<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;x&nbsp;(int):&nbsp;De&nbsp;x-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;y&nbsp;(int):&nbsp;De&nbsp;y-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+&nbsp;<br>
+Returns:<br>
+-&nbsp;tk.StringVar:&nbsp;Ingevulde&nbsp;waarde&nbsp;in&nbsp;het&nbsp;invoerveld.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_knop_toe"><strong>voeg_knop_toe</strong></a>(self, tekst, x, y, functie)</dt><dd><span class="code">Voegt&nbsp;een&nbsp;knop&nbsp;toe&nbsp;aan&nbsp;het&nbsp;hoofdvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;tekst&nbsp;(str):&nbsp;De&nbsp;tekst&nbsp;die&nbsp;op&nbsp;de&nbsp;knop&nbsp;moet&nbsp;verschijnen.<br>
+-&nbsp;x&nbsp;(int):&nbsp;De&nbsp;x-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;y&nbsp;(int):&nbsp;De&nbsp;y-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;functie&nbsp;(callable):&nbsp;De&nbsp;functie&nbsp;die&nbsp;aangeroepen&nbsp;wordt&nbsp;wanneer&nbsp;de&nbsp;knop&nbsp;wordt&nbsp;ingedrukt.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_nieuwe_voorziening_knop_toe"><strong>voeg_nieuwe_voorziening_knop_toe</strong></a>(self, tekst, x, y, voorziening_attributen, opslaan_callback)</dt><dd><span class="code">Voegt&nbsp;een&nbsp;gespecialiseerde&nbsp;knop&nbsp;toe&nbsp;die&nbsp;een&nbsp;dialoogvenster&nbsp;opent&nbsp;voor&nbsp;het&nbsp;toevoegen&nbsp;van&nbsp;voorzieningen.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;tekst&nbsp;(str):&nbsp;De&nbsp;tekst&nbsp;die&nbsp;op&nbsp;de&nbsp;knop&nbsp;moet&nbsp;verschijnen.<br>
+-&nbsp;x&nbsp;(int):&nbsp;De&nbsp;x-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;y&nbsp;(int):&nbsp;De&nbsp;y-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;voorziening_attributen&nbsp;(list):&nbsp;Een&nbsp;lijst&nbsp;met&nbsp;informatie&nbsp;over&nbsp;de&nbsp;attributen&nbsp;van&nbsp;de&nbsp;nieuwe&nbsp;voorziening.<br>
+-&nbsp;opslaan_callback&nbsp;(callable):&nbsp;De&nbsp;functie&nbsp;die&nbsp;aangeroepen&nbsp;wordt&nbsp;om&nbsp;de&nbsp;gegevens&nbsp;op&nbsp;te&nbsp;slaan.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_tabel_toe"><strong>voeg_tabel_toe</strong></a>(self, titel, kolom_namen, rijen, x, y, breedte, hoogte, bewerk_callback=None, verwijder_callback=None)</dt><dd><span class="code">Voegt&nbsp;een&nbsp;nieuwe&nbsp;tabel&nbsp;toe&nbsp;aan&nbsp;het&nbsp;hoofdvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titel&nbsp;(str):&nbsp;De&nbsp;titel&nbsp;van&nbsp;de&nbsp;tabel.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;kolom_namen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;kolomnamen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rijen&nbsp;(list):&nbsp;Lijst&nbsp;van&nbsp;rijen&nbsp;met&nbsp;gegevens.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(int):&nbsp;De&nbsp;x-coördinaat&nbsp;voor&nbsp;de&nbsp;plaatsing&nbsp;van&nbsp;de&nbsp;tabel.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(int):&nbsp;De&nbsp;y-coördinaat&nbsp;voor&nbsp;de&nbsp;plaatsing&nbsp;van&nbsp;de&nbsp;tabel.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;breedte&nbsp;(int):&nbsp;De&nbsp;breedte&nbsp;van&nbsp;de&nbsp;tabel.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hoogte&nbsp;(int):&nbsp;De&nbsp;hoogte&nbsp;van&nbsp;de&nbsp;tabel.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bewerk_callback&nbsp;(function,&nbsp;optional):&nbsp;Callback-functie&nbsp;voor&nbsp;het&nbsp;bewerken&nbsp;van&nbsp;een&nbsp;rij.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;verwijder_callback&nbsp;(function,&nbsp;optional):&nbsp;Callback-functie&nbsp;voor&nbsp;het&nbsp;verwijderen&nbsp;van&nbsp;een&nbsp;rij.</span></dd></dl>
+
+<dl><dt><a name="Scherm-voeg_tekst_toe"><strong>voeg_tekst_toe</strong></a>(self, tekst, x, y)</dt><dd><span class="code">Voegt&nbsp;een&nbsp;tekstlabel&nbsp;toe&nbsp;aan&nbsp;het&nbsp;hoofdvenster.<br>
+&nbsp;<br>
+Parameters:<br>
+-&nbsp;tekst&nbsp;(str):&nbsp;De&nbsp;tekst&nbsp;die&nbsp;op&nbsp;het&nbsp;label&nbsp;moet&nbsp;verschijnen.<br>
+-&nbsp;x&nbsp;(int):&nbsp;De&nbsp;x-positie&nbsp;in&nbsp;het&nbsp;venster.<br>
+-&nbsp;y&nbsp;(int):&nbsp;De&nbsp;y-positie&nbsp;in&nbsp;het&nbsp;venster.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
