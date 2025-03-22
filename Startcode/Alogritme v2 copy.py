@@ -15,7 +15,7 @@ db = Database(host="localhost", gebruiker="user", wachtwoord="password", databas
 # Haal de eigenschappen op van een personeelslid .
 # navigeer naar het JSON-bestand, let op: er zijn ook andere personeelsleden om te testen!
 # en maak vooral ook je eigen persoonlijke voorkeuren :-)
-bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_5.json' #'personeelsgegevens_personeelslid_1.json' 
+bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_1.json' #'personeelsgegevens_personeelslid_1.json' 
 
 # open het JSON-bestand 
 json_bestand = open(bestand_pad)
@@ -67,16 +67,8 @@ restant_werktijd = eigenschappen_personeelslid["werktijd"]
 
 # taken worden in vier aparte lijsten gezet zodat ze correct gesorteerd kunnen worden op basis van specialisatie en prioriteit
 def filter_en_sorteren_taken(onderhoudstaken, medewerker):
-    specialistische_taken_hoog, andere_taken_hoog = [], []
-    specialistische_taken_laag, andere_taken_laag = [], []
-
-    for onderhoudstaak in onderhoudstaken:
-        if onderhoudstaak["prioriteit"] == "hoog":  
-            (specialistische_taken_hoog if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"] else andere_taken_hoog).append(onderhoudstaak)
-        else:
-            (specialistische_taken_laag if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"] else andere_taken_laag).append(onderhoudstaak)
-    
-    return specialistische_taken_hoog + andere_taken_hoog + specialistische_taken_laag + andere_taken_laag
+    onderhoudstaken.sort(key=lambda t: (t["attractie"] != medewerker["specialist_in_attracties"], t["prioriteit"] != "hoog"))
+    return onderhoudstaken
 
 onderhoudstaken_gesorteerd = filter_en_sorteren_taken(onderhoudstaken, eigenschappen_personeelslid)
 
