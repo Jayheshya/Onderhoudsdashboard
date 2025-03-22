@@ -65,26 +65,17 @@ bevoegdheid = {
 dagtaken = []
 restant_werktijd = eigenschappen_personeelslid["werktijd"]
 
-# taken worden in vier aparte lijsten gezet zodat ze correct gefilterd kunnen worden op basis van specialisatie en prioriteit
+# taken worden in vier aparte lijsten gezet zodat ze correct gesorteerd kunnen worden op basis van specialisatie en prioriteit
 def filter_en_sorteren_taken(onderhoudstaken, medewerker):
-    specialistische_taken_hoog = []
-    andere_taken_hoog = []
-    specialistische_taken_laag = []
-    andere_taken_laag = []
+    specialistische_taken_hoog, andere_taken_hoog = [], []
+    specialistische_taken_laag, andere_taken_laag = [], []
 
-    # 
     for onderhoudstaak in onderhoudstaken:
         if onderhoudstaak["prioriteit"] == "hoog":  
-            if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"]:
-                specialistische_taken_hoog.append(onderhoudstaak)
-            else:
-                andere_taken_hoog.append(onderhoudstaak)
-        else:  
-            if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"]:
-                specialistische_taken_laag.append(onderhoudstaak)
-            else:
-                andere_taken_laag.append(onderhoudstaak)
-
+            (specialistische_taken_hoog if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"] else andere_taken_hoog).append(onderhoudstaak)
+        else:
+            (specialistische_taken_laag if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"] else andere_taken_laag).append(onderhoudstaak)
+    
     return specialistische_taken_hoog + andere_taken_hoog + specialistische_taken_laag + andere_taken_laag
 
 onderhoudstaken_gesorteerd = filter_en_sorteren_taken(onderhoudstaken, eigenschappen_personeelslid)
