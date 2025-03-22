@@ -72,6 +72,7 @@ def filter_en_sorteren_taken(onderhoudstaken, medewerker):
 
 onderhoudstaken_gesorteerd = filter_en_sorteren_taken(onderhoudstaken, eigenschappen_personeelslid)
 
+laatste_taak = None
 for onderhoudstaak in onderhoudstaken_gesorteerd:
     if onderhoudstaak["duur"] + 2 > restant_werktijd:
         continue
@@ -79,10 +80,19 @@ for onderhoudstaak in onderhoudstaken_gesorteerd:
         continue
     if bevoegdheid[eigenschappen_personeelslid["bevoegdheid"]] < bevoegdheid[onderhoudstaak["bevoegdheid"]]:
         continue
-
+    
     onderhoudstaak["duur"] += 2
+    
+    if onderhoudstaak["prioriteit"] == "laag" and onderhoudstaak["duur"] - 2 <= 30:
+        laatste_taak = onderhoudstaak
+        continue
+    
     dagtaken.append(onderhoudstaak)
     restant_werktijd -= onderhoudstaak["duur"]
+
+if laatste_taak and restant_werktijd >= laatste_taak["duur"]:
+    dagtaken.append(laatste_taak)
+    restant_werktijd -= laatste_taak["duur"]
 
 # Voeg taken toe aan de dagtakenlijst en bereken de totale duur
 totale_duur = 0
@@ -126,4 +136,3 @@ with open(output_bestand_pad, 'w', encoding='utf-8') as json_bestand_uitvoer:
     json.dump(persoonlijk_taken, json_bestand_uitvoer, indent=4, ensure_ascii=False)
 
 print(f"Dagtakenlijst opgeslagen in: {output_bestand_pad}")
-
