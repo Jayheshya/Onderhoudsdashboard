@@ -3,7 +3,7 @@
     "werktijd": 250,
     "beroepstype": "Elektrisch Monteur",
     "bevoegdheid": "Senior",
-    "specialist_in_attracties": [],
+    "specialist_in_attracties": ["Family Train"],
     "pauze_opsplitsen": false,
     "leeftijd": 28,
     "verlaagde_fysieke_belasting": 20

@@ -54,8 +54,6 @@ onderhoudstaken = db.execute_query(select_query)
 # altijd verbinding sluiten met de database als je klaar bent
 db.close()
 
-
-
 # bevoegdheden naar int
 bevoegdheid = {
     "Stagiair": 1,
@@ -67,12 +65,14 @@ bevoegdheid = {
 dagtaken = []
 restant_werktijd = eigenschappen_personeelslid["werktijd"]
 
+# taken worden in vier aparte lijsten gezet zodat ze correct gefilterd kunnen worden op basis van specialisatie en prioriteit
 def filter_en_sorteren_taken(onderhoudstaken, medewerker):
     specialistische_taken_hoog = []
     andere_taken_hoog = []
     specialistische_taken_laag = []
     andere_taken_laag = []
 
+    # 
     for onderhoudstaak in onderhoudstaken:
         if onderhoudstaak["prioriteit"] == "hoog":  
             if onderhoudstaak["attractie"] == medewerker["specialist_in_attracties"]:
@@ -100,33 +100,6 @@ for onderhoudstaak in onderhoudstaken_gesorteerd:
     dagtaken.append(onderhoudstaak)
     restant_werktijd -= onderhoudstaak["duur"]
 
-
-# for onderhoudstaak in onderhoudstaken:
-#     # duur onderhoudstaak gelijk of lager dan restant werktijd personeelslid?
-#     if onderhoudstaak["duur"] > restant_werktijd:
-#         continue
-        
-#     # beroepstype gelijk aan persoon beroeptype?
-#     if onderhoudstaak["beroepstype"] != eigenschappen_personeelslid["beroepstype"]:
-#         continue
-#     # Bevoegdheid personeelslid gelijk aan of hoger bevoegdheid onderhoudstaak?
-#     if bevoegdheid[eigenschappen_personeelslid["bevoegdheid"]] < bevoegdheid[onderhoudstaak["bevoegdheid"]]:
-#         continue
-
-#     # specialist check
-#     # if onderhoudstaak["attractie"] not in eigenschappen_personeelslid["specialist_in_attracties"]:
-#     #    continue
-    
-        
-#     # weersomstandigheden regen en onderhoudstaak buiten?
-    
-#      # voeg onderhoudstaak toe aan dagtakenlijst
-#         dagtaken.append(onderhoudstaak)
-#         restant_werktijd -= onderhoudstaak["duur"]
-
-#for dagtaak in dagtaken:
- #   print(f"{dagtaak['attractie']}: {dagtaak['omschrijving']} bevoegdheid: {dagtaak['bevoegdheid']} {dagtaak['beroepstype']} prioriteit: {dagtaak['prioriteit']} duur: {dagtaak['duur']} minuten")
-
 # Voeg taken toe aan de dagtakenlijst en bereken de totale duur
 totale_duur = 0
 dagtakenlijst = []
@@ -143,14 +116,6 @@ for dagtaak in dagtaken:
         "is_buitenwerk": dagtaak["is_buitenwerk"]
     })
     totale_duur += dagtaak["duur"]
-
-
-# DE OPDRACHT
-# Met die 2 datasets moet je tot een dagtakenlijst komen voor het personeelslid
-# Zorg dat je een algoritme ontwikkelt, conform eisen in het ontwerpdocument
-# Zorg dat het een dagtakenlijst genereert/output naar een .json bestand,
-# dat weer ingelezen kan worden in een webomgeving (zie acceptatieomgeving website folder)
-# Hieronder een begin...
 
 persoonlijk_taken = {
      "personeelsgegevens": {
@@ -178,10 +143,3 @@ with open(output_bestand_pad, 'w', encoding='utf-8') as json_bestand_uitvoer:
 
 print(f"Dagtakenlijst opgeslagen in: {output_bestand_pad}")
 
-# with open('dagtakenlijst_personeelslid_x.json', 'w') as json_bestand_uitvoer:
-    # json.dump(dagtakenlijst, json_bestand_uitvoer, indent=4)
-
-
-# www.url./?sport=formule1& - Zo geven we een query mee bij de API
-# 
-    
