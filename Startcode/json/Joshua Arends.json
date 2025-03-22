@@ -1,0 +1,85 @@
+{
+    "personeelsgegevens": {
+        "naam": "Joshua Arends",
+        "werktijd": 480,
+        "beroepstype": "Onderhoudsmonteur",
+        "bevoegdheid": "Medior",
+        "Specialist in attracties": [],
+        "Pauze opsplitsen": false,
+        "Maximale fysieke belasting (in kilo's)": 40
+    },
+    "weergegevens": {},
+    "dagtaken": [
+        {
+            "attractie": "Cave Splash",
+            "omschrijving": "Controle van waterpompen",
+            "bevoegdheid": "Medior",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "hoog",
+            "duur": 45,
+            "fysieke_belasting": 30,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "Fairy Tale Ride",
+            "omschrijving": "Controle op slijtage",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "hoog",
+            "duur": 60,
+            "fysieke_belasting": 8,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "Fairy Tale Ride",
+            "omschrijving": "Controle van kleine lekken",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "hoog",
+            "duur": 30,
+            "fysieke_belasting": 6,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Controle van brandblusapparatuur",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "laag",
+            "duur": 90,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Controle van brandblusapparatuur",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "laag",
+            "duur": 90,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Family Carousel",
+            "omschrijving": "Herstel van veiligheidsbeugels",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "laag",
+            "duur": 90,
+            "fysieke_belasting": 10,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Reiniging van kleine onderdelen",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Onderhoudsmonteur",
+            "prioriteit": "laag",
+            "duur": 30,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        }
+    ],
+    "totale_duur": 435
+}

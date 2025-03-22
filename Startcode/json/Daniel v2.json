@@ -1,0 +1,65 @@
+{
+    "personeelsgegevens": {
+        "naam": "Daniel Arends",
+        "werktijd": 250,
+        "beroepstype": "Elektrisch Monteur",
+        "bevoegdheid": "Senior",
+        "Specialist in attracties": [],
+        "Pauze opsplitsen": false,
+        "Maximale fysieke belasting (in kilo's)": 20
+    },
+    "weergegevens": {},
+    "dagtaken": [
+        {
+            "attractie": "Mega Spin",
+            "omschrijving": "Oplossen van technische storingen",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Elektrisch Monteur",
+            "prioriteit": "hoog",
+            "duur": 50,
+            "fysieke_belasting": 25,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Speed Racer",
+            "omschrijving": "Aanpassing van instellingen",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Elektrisch Monteur",
+            "prioriteit": "hoog",
+            "duur": 50,
+            "fysieke_belasting": 25,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Inspectie van parkverlichting",
+            "bevoegdheid": "Medior",
+            "beroepstype": "Elektrisch Monteur",
+            "prioriteit": "hoog",
+            "duur": 90,
+            "fysieke_belasting": 15,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "Adventure Ride",
+            "omschrijving": "Reparatie van kleine bedradingen",
+            "bevoegdheid": "Medior",
+            "beroepstype": "Elektrisch Monteur",
+            "prioriteit": "hoog",
+            "duur": 30,
+            "fysieke_belasting": 10,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "Magic Forest",
+            "omschrijving": "Controle van elektrische schakelaars",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Elektrisch Monteur",
+            "prioriteit": "laag",
+            "duur": 30,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        }
+    ],
+    "totale_duur": 250
+}

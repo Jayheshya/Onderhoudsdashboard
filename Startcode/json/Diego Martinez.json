@@ -1,0 +1,105 @@
+{
+    "personeelsgegevens": {
+        "naam": "Diego Martinez",
+        "werktijd": 360,
+        "beroepstype": "Schilder",
+        "bevoegdheid": "Senior",
+        "Specialist in attracties": [],
+        "Pauze opsplitsen": true,
+        "Maximale fysieke belasting (in kilo's)": 20
+    },
+    "weergegevens": {},
+    "dagtaken": [
+        {
+            "attractie": null,
+            "omschrijving": "Reparatie van algemene decoraties",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Schilder",
+            "prioriteit": "hoog",
+            "duur": 45,
+            "fysieke_belasting": 20,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Reparatie van algemene decoraties",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Schilder",
+            "prioriteit": "hoog",
+            "duur": 45,
+            "fysieke_belasting": 20,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Sky Diver",
+            "omschrijving": "Herstel van decoratieve lampen",
+            "bevoegdheid": "Medior",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 60,
+            "fysieke_belasting": 8,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "River Rapids",
+            "omschrijving": "Schilderen van decoratieve randen",
+            "bevoegdheid": "Medior",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 30,
+            "fysieke_belasting": 6,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Looping Dragon",
+            "omschrijving": "Vervanging van panelen",
+            "bevoegdheid": "Junior",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 60,
+            "fysieke_belasting": 12,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Magic Forest",
+            "omschrijving": "Aanbrengen van grondverf op relingen",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 45,
+            "fysieke_belasting": 6,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": "Sky Diver",
+            "omschrijving": "Bijwerken van verf op attractiepanelen",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 30,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Schoonmaken van verfkwasten en materialen",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 15,
+            "fysieke_belasting": 4,
+            "is_buitenwerk": 0
+        },
+        {
+            "attractie": "Mega Spin",
+            "omschrijving": "Schilderen van decoratieve randen op attracties",
+            "bevoegdheid": "Stagiair",
+            "beroepstype": "Schilder",
+            "prioriteit": "laag",
+            "duur": 30,
+            "fysieke_belasting": 5,
+            "is_buitenwerk": 1
+        }
+    ],
+    "totale_duur": 360
+}

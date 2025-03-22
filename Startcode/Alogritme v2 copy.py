@@ -15,7 +15,7 @@ db = Database(host="localhost", gebruiker="user", wachtwoord="password", databas
 # Haal de eigenschappen op van een personeelslid .
 # navigeer naar het JSON-bestand, let op: er zijn ook andere personeelsleden om te testen!
 # en maak vooral ook je eigen persoonlijke voorkeuren :-)
-bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_1.json' #'personeelsgegevens_personeelslid_1.json' 
+bestand_pad = Path(__file__).parent / 'personeelsgegevens_personeelslid_5.json' #'personeelsgegevens_personeelslid_1.json' 
 
 # open het JSON-bestand 
 json_bestand = open(bestand_pad)
@@ -171,7 +171,7 @@ persoonlijk_taken = {
 }
 
 # Schrijf het resultaat naar een JSON-bestand
-output_bestand_pad = Path(__file__).parent / 'bbbb.json'
+output_bestand_pad = Path(__file__).parent / 'bbbb2.json'
 
 with open(output_bestand_pad, 'w', encoding='utf-8') as json_bestand_uitvoer:
     json.dump(persoonlijk_taken, json_bestand_uitvoer, indent=4, ensure_ascii=False)

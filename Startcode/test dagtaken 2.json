@@ -1,0 +1,55 @@
+{
+    "personeelsgegevens": {
+        "naam": "Piet de Jong",
+        "werktijd": 240,
+        "beroepstype": "Mechanisch Monteur",
+        "bevoegdheid": "Senior",
+        "specialist_in_attracties": [
+            "Mega Spin",
+            "River Rapids",
+            "Twister"
+        ],
+        "pauze_opsplitsen": false,
+        "max_fysieke_belasting": 30
+    },
+    "weergegevens": {},
+    "dagtaken": [
+        {
+            "attractie": "Twister",
+            "omschrijving": "Mechanisch onderhoud aan scharnieren",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Mechanisch Monteur",
+            "prioriteit": "hoog",
+            "duur (in minuten)": 45,
+            "fysieke_belasting": 25
+        },
+        {
+            "attractie": "Galactic Journey",
+            "omschrijving": "Reparatie aan karretjes",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Mechanisch Monteur",
+            "prioriteit": "hoog",
+            "duur (in minuten)": 120,
+            "fysieke_belasting": 20
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Controle van dakconstructies",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Mechanisch Monteur",
+            "prioriteit": "hoog",
+            "duur (in minuten)": 40,
+            "fysieke_belasting": 25
+        },
+        {
+            "attractie": null,
+            "omschrijving": "Herstel van dakconstructie",
+            "bevoegdheid": "Senior",
+            "beroepstype": "Mechanisch Monteur",
+            "prioriteit": "hoog",
+            "duur (in minuten)": 30,
+            "fysieke_belasting": 25
+        }
+    ],
+    "totale_duur": 0
+}

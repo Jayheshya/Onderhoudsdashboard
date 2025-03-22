@@ -1,0 +1,80 @@
+Notes DP3
+- Select query schrijven
+- JSON wegschrijven in Python
+	Wat moet in dit bestand?
+- Test database ubkadeb
+- Acceptatieomgeving bekijken
+- JSON bestand met personeelgegevens bekijken
+- FR1, FR3 en FR4 bekijken
+- algoritime selectie onderhoudstaken op basis van voorkeuren
+	Beslisboom maken
+	Bekijk FR7 should en FR6 optioneel
+
+
+FR1 Het systeem moet de eigenschappen van een personeelslid kunnen
+inlezen vanuit een JSON-bestand
+
+FR3 Het systeem moet de volgende eigenschappen van een personeelslid
+wegschrijven naar een output JSON-bestand:
+- naam
+- werktijd (in minuten)
+- beroepstype(schilder, mechanisch monteur, elektrotechnisch
+monteur, onderhoudsmonteur)
+- bevoegdheid (senior, medior, junior, stagiair)
+- specialist in attracties
+- pauze opsplitsen (true, false)
+
+FR4 Het systeem moet de maximale fysieke belasting van een
+personeelslid ook wegschrijven naar het output JSON-bestand.
+Het systeem moet de juiste maximale fysieke belasting berekenen op
+de basis van de onderstaande gegevens:
+• Leeftijd t/m 24 jaar: Maximaal 25 kg.
+• Leeftijd 25 t/m 50 jaar: Maximaal 40 kg.
+• Leeftijd 51+: Maximaal 20 kg.
+Wanneer een Arboarts een aangepaste maximale fysieke belasting
+vaststelt, moet deze waarde leidend zijn
+
+FR6 Het systeem mag alleen onderhoudstaken toevoegen volgende de
+onderstaande regels:
+• het beroepstype past bij het beroep van het personeelslid
+• het personeelslid is bevoegd voor de taak
+• de taak heeft een lagere fysieke belasting dan de maximale
+belasting van het personeelslid
+
+FR8 Het systeem moet taken met een hoge prioriteit eerst toewijzen,
+waarbij de hoge prioriteit specialistische taken eerst worden
+opgenomen. Het systeem moet taken van lage prioriteit pas toewijzen
+nadat taken met hoge prioriteit zijn verwerkt, waarbij de lage prioriteit
+specialistische taken eerst worden opgenomen.
+
+--- Volgschema ---
+1. Taken sorteren via SQL (Afgerond en prioriteit) 
+| SELECT * FROM attractiepark_onderhoud.onderhoudstaak WHERE afgerond = 0 ORDER BY prioriteit; |
+
+2. Tijd check
+2. Onderhoudstaak = beroepstaak (anders terug naar 2 want schilder moet schilderen)
+
+3. Bevoegdheid personeel (stagair - senior) [maak een list met stagair als 0]
+	als bevoegdheid personeel groter of gelijk is aan bevoegdheid onderhoudstaak dan door naar 3
+	als bovenstaand onwaar terug naar 2
+
+4. Specialisme check (True or Not True)
+	als True skip naar assign
+	als Not True skip deze stap
+
+5. Fysieke belasting (FB) # maak een aparte functie voor bepalen van fysieke belasting
+FB functie:
+• Afwijkende maxima worden hard-coded verwerkt
+• Leeftijd t/m 24 jaar: Maximaal 25 kg.
+• Leeftijd 25 t/m 50 jaar: Maximaal 40 kg.
+• Leeftijd 51+: Maximaal 20 kg.
+	
+	als FB van onderhoudstaak gelijk of kleiner is dan FB van personeel terug naar 5
+
+6. Optionele weercheck voor buitenwerk
+
+7. Assign
+	 
+	
+
+	
