@@ -81,13 +81,14 @@ def filter_en_sorteren_taken(onderhoudstaken, medewerker):
 onderhoudstaken_gesorteerd = filter_en_sorteren_taken(onderhoudstaken, eigenschappen_personeelslid)
 
 for onderhoudstaak in onderhoudstaken_gesorteerd:
-    if onderhoudstaak["duur"] > restant_werktijd:
+    if onderhoudstaak["duur"] + 2 > restant_werktijd:
         continue
     if onderhoudstaak["beroepstype"] != eigenschappen_personeelslid["beroepstype"]:
         continue
     if bevoegdheid[eigenschappen_personeelslid["bevoegdheid"]] < bevoegdheid[onderhoudstaak["bevoegdheid"]]:
         continue
 
+    onderhoudstaak["duur"] += 2
     dagtaken.append(onderhoudstaak)
     restant_werktijd -= onderhoudstaak["duur"]
 

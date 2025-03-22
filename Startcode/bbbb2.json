@@ -18,7 +18,7 @@
             "bevoegdheid": "Senior",
             "beroepstype": "Elektrisch Monteur",
             "prioriteit": "hoog",
-            "duur": 50,
+            "duur": 52,
             "fysieke_belasting": 25,
             "is_buitenwerk": 1
         },
@@ -28,7 +28,7 @@
             "bevoegdheid": "Senior",
             "beroepstype": "Elektrisch Monteur",
             "prioriteit": "hoog",
-            "duur": 50,
+            "duur": 52,
             "fysieke_belasting": 25,
             "is_buitenwerk": 1
         },
@@ -38,7 +38,7 @@
             "bevoegdheid": "Medior",
             "beroepstype": "Elektrisch Monteur",
             "prioriteit": "hoog",
-            "duur": 90,
+            "duur": 92,
             "fysieke_belasting": 15,
             "is_buitenwerk": 0
         },
@@ -48,20 +48,10 @@
             "bevoegdheid": "Medior",
             "beroepstype": "Elektrisch Monteur",
             "prioriteit": "hoog",
-            "duur": 30,
+            "duur": 32,
             "fysieke_belasting": 10,
             "is_buitenwerk": 0
-        },
-        {
-            "attractie": "Magic Forest",
-            "omschrijving": "Controle van elektrische schakelaars",
-            "bevoegdheid": "Junior",
-            "beroepstype": "Elektrisch Monteur",
-            "prioriteit": "laag",
-            "duur": 30,
-            "fysieke_belasting": 5,
-            "is_buitenwerk": 1
         }
     ],
-    "totale_duur": 250
+    "totale_duur": 228
 }
