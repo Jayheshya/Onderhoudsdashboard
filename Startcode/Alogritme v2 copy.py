@@ -65,13 +65,14 @@ bevoegdheid = {
 dagtaken = []
 restant_werktijd = eigenschappen_personeelslid["werktijd"]
 
-# taken worden in vier aparte lijsten gezet zodat ze correct gesorteerd kunnen worden op basis van specialisatie en prioriteit
+# taken worden in een aparte functie gesorteerd op basis van prioriteit en specialisatie
 def filter_en_sorteren_taken(onderhoudstaken, medewerker):
     onderhoudstaken.sort(key=lambda t: (t["attractie"] != medewerker["specialist_in_attracties"], t["prioriteit"] != "hoog"))
     return onderhoudstaken
 
 onderhoudstaken_gesorteerd = filter_en_sorteren_taken(onderhoudstaken, eigenschappen_personeelslid)
 
+# laatste taak wordt geselecteerd en NOG NIET toegevoegd aan de dagtakenlijst
 laatste_taak = None
 for onderhoudstaak in onderhoudstaken_gesorteerd:
     if onderhoudstaak["duur"] + 2 > restant_werktijd:
@@ -90,6 +91,7 @@ for onderhoudstaak in onderhoudstaken_gesorteerd:
     dagtaken.append(onderhoudstaak)
     restant_werktijd -= onderhoudstaak["duur"]
 
+# Code stopt als de duur van de laatste taak groter is dan de resterende werktijd
 if laatste_taak and restant_werktijd >= laatste_taak["duur"]:
     dagtaken.append(laatste_taak)
     restant_werktijd -= laatste_taak["duur"]
